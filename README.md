@@ -20,7 +20,6 @@ cd lazyloading-img //进入文件夹
 //使用方法
 $lazyload({
     img:'img',//图片即标签名 默认写img
-    default:'img/default.png', //默认src文件名
     timer:'0.4s'//淡入淡出时间
 }).init();
 

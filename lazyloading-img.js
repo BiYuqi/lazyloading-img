@@ -80,10 +80,10 @@
                 sn = 0;//初始化图片位置
             for(var i=sn; i<len; i++){
                 if(imgNums[i].offsetTop < okSeeHeight + curScrollTop){
-                    if(imgNums[i].getAttribute('src') == this.obj.default){
-                        imgNums[i].src = imgNums[i].getAttribute('data-src');
-                        this.addClass(imgNums[i],'show');
-                    }
+                    // if(imgNums[i].getAttribute('src') == this.obj.default){ 放弃校验默认图片
+                    imgNums[i].src = imgNums[i].getAttribute('data-src');
+                    this.addClass(imgNums[i],'show');
+                    // }
                     sn = i + 1;
                 }
             }
