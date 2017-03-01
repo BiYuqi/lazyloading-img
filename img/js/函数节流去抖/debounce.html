@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>debounce去抖</title>
+    </head>
+    <body>
+        <input type="text" name="" value="" class="input">
+        <div class="box"></div>
+        <script>
+            // 1. 定义
+            //如果用手指一直按住一个弹簧，它将不会弹起直到你松手为止。
+            //也就是说当调用动作n毫秒后，才会执行该动作，
+            //若在这n毫秒内又调用此动作则将重新计算执行时间。
+            /**
+            * 空闲控制 返回函数连续调用时，空闲时间必须大于或等于 timer,callback 才会执行
+            * @param timer   {number}    空闲时间，单位毫秒
+            * @param callback {function}  请求关联函数，实际应用需要调用的函数
+            * @return {function}    返回客户调用函数
+            */
+            //形像的比喻是橡皮球。如果手指按住橡皮球不放，它就一直受力，不能反弹起来，直到松手。
+            //debounce 的关注点是空闲的间隔时间。
+
+            // 只要牵涉到连续事件或频率控制相关的应用都可以考虑到这两个函数，比如：
+            // 游戏射击，keydown 事件
+            // 文本输入、自动完成，keyup 事件
+
+            // 鼠标移动，mousemove 事件
+            // DOM 元素动态定位，window对象的resize和scroll 事件
+
+            // 前两者 debounce 和 throttle 都可以按需使用；后两者肯定是用 throttle 了。
+            //
+            // 如果不做过滤处理，每秒种甚至会触发数十次相应的事件。尤其是 mousemove 事件，每移动一像素都可能触发一次事件。
+            // 如果是在一个画布上做一个鼠标相关的应用，过滤事件处理是必须的，否则肯定会造成糟糕的体验。
+            function debounce(delay,callback){
+                var timer = null;
+                return function(){
+                    var args = arguments,
+                        that = this;
+                    clearTimeout(timer);
+                    timer = setTimeout(function(){
+                        callback.apply(that,args);
+                    },delay)
+                }
+            }
+            function $(el){
+                return document.querySelector(el);
+            }
+            //keyup时间结束200毫秒后执行相关回调事件
+            $('.input').addEventListener('keyup',debounce(200,function(){
+                $('.box').innerHTML = $('.input').value;
+            },false))
+
+        </script>
+    </body>
+</html>

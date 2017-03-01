@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>图片懒加载优化性能</title>
+        <style>
+            ul li{
+                list-style: none;
+                width: 800px;
+                height: 400px;
+                margin: 0 auto;
+                border: 1px solid #c33;
+            }
+            ul li img{
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box"></div>
+        <ul>
+            <li><img src="default.png" data-src="timg.jpg" alt="测试懒加载"></li>
+            <li><img src="default.png" data-src="timg.jpg" alt="测试懒加载"></li>
+            <li><img src="default.png" data-src="timg.jpg" alt="测试懒加载"></li>
+            <li><img src="default.png" data-src="timg.jpg" alt="测试懒加载"></li>
+            <li><img src="default.png" data-src="timg.jpg" alt="测试懒加载"></li>
+            <li><img src="default.png" data-src="timg.jpg" alt="测试懒加载"></li>
+            <li><img src="default.png" data-src="timg.jpg" alt="测试懒加载"></li>
+            <li><img src="default.png" data-src="timg.jpg" alt="测试懒加载"></li>
+            <li><img src="default.png" data-src="timg.jpg" alt="测试懒加载"></li>
+            <li><img src="default.png" data-src="timg.jpg" alt="测试懒加载"></li>
+            <li><img src="default.png" data-src="timg.jpg" alt="测试懒加载"></li>
+            <li><img src="default.png" data-src="timg.jpg" alt="测试懒加载"></li>
+            <li><img src="default.png" data-src="timg.jpg" alt="测试懒加载"></li>
+            <li><img src="default.png" data-src="timg.jpg" alt="测试懒加载"></li>
+            <li><img src="default.png" data-src="timg.jpg" alt="测试懒加载"></li>
+            <li><img src="default.png" data-src="timg.jpg" alt="测试懒加载"></li>
+            <li><img src="default.png" data-src="timg.jpg" alt="测试懒加载"></li>
+            <li><img src="default.png" data-src="timg.jpg" alt="测试懒加载"></li>
+            <li><img src="default.png" data-src="timg.jpg" alt="测试懒加载"></li>
+            <li><img src="default.png" data-src="timg.jpg" alt="测试懒加载"></li>
+        </ul>
+        <script>
+            function throttle(delay,time,callback){
+                var startTime = new Date();
+                var timer = null;
+                return function(){
+                    var currTime = new Date(),
+                        that = this,
+                        args = arguments;
+                    clearTimeout(timer);
+                    if(currTime - startTime >= delay){
+                        callback.apply(that,args);
+                        startTime = currTime;
+                    }else{
+                        timer = setTimeout(function(){
+                            callback.apply(that,args)
+                        },time)
+                    }
+                }
+            }
+            function $$(el){
+                return document.querySelectorAll(el);
+            }
+            var n = 0,//记录图片的位置
+                imgNums = $$('img'),
+                len = imgNums.length;
+            function lazyload(){
+                var okSeeHeight = document.documentElement.clientHeight;//可视区域高度
+                var curScrollTop = document.body.scrollTop || document.documentElement.scrollTop;//滚动条高度
+                for(var i=n; i<len; i++){
+                    if(imgNums[i].offsetTop < okSeeHeight + curScrollTop){
+                        if(imgNums[i].getAttribute('src') == 'default.png'){
+                            imgNums[i].src = imgNums[i].getAttribute('data-src');
+                        }
+                        n = i + 1;
+                    }
+                }
+            };
+            lazyload();
+            window.addEventListener('scroll',throttle(1000,500,function(){
+                lazyload();
+            }),false);
+
+
+            //测试scroll执行频率
+            var set = 0;
+            window.addEventListener('scroll',function(){
+                document.querySelector('.box').innerHTML = set++;
+            });
+
+            console.log(new Date());
+            console.log(+new Date());
+        </script>
+    </body>
+</html>

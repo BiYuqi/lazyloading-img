@@ -1,0 +1,62 @@
+[
+		[
+			{"docImg":"img/shouye/1-1.jpg","docName":"江文","docClass":"教授,主任医师","docDetail":"神经内科","docGoodAt":"擅长治疗：癫痫、脑血管病、神经重症"},
+			{"docImg":"img/shouye/1-2.jpg","docName":"赵钢","docClass":"主任医师","docDetail":"神经内科","docGoodAt":"擅长治疗：痴呆,脑血管病,眩晕,头痛 ,帕金森病"},
+			{"docImg":"img/shouye/1-3.jpg","docName":"贾宏阁","docClass":"主任医师","docDetail":"神经内科","docGoodAt":"擅长治疗：脑血管病,帕金森病,老年痴呆,肌炎"},
+			{"docImg":"img/shouye/1-4.jpg","docName":"邓艳春","docClass":"主任医师","docDetail":"神经内科","docGoodAt":"擅长治疗：癫痫,癫痫术前评估,记忆障碍,神经内科疾病"},
+			{"docImg":"img/shouye/1-5.jpg","docName":"刘之荣","docClass":"主任医师","docDetail":"神经内科","docGoodAt":"擅长治疗：痴呆,脑血管病,记忆障碍,神经内科疾病"},
+			{"docImg":"img/shouye/1-6.jpg","docName":"吴中亮","docClass":"主任医师","docDetail":"神经内科","docGoodAt":"擅长治疗：脑血管病,眩晕,头痛 ,周围神经病,帕金森病,睡眠障碍"}
+		],
+		[
+			{"docImg":"img/shouye/2-1.jpg","docName":"陶凌","docClass":"教授,主任医师","docDetail":"心血管内科","docGoodAt":"擅长治疗：冠心病"},
+			{"docImg":"img/shouye/2-2.jpg","docName":"易甫","docClass":"副教授,主任医师","docDetail":"心血管内科","docGoodAt":"擅长治疗：心律失常"},
+			{"docImg":"img/shouye/2-3.jpg","docName":"陈迈","docClass":"副教授,主任医师","docDetail":"心血管内科","docGoodAt":"擅长治疗：冠心病、心律失常"},
+			{"docImg":"img/shouye/2-4.jpg","docName":"胡涛","docClass":"副教授,主任医师","docDetail":"心血管内科","docGoodAt":"擅长治疗：冠心病"},
+			{"docImg":"img/shouye/2-5.jpg","docName":"郭文怡","docClass":"主任医师","docDetail":"心血管内科","docGoodAt":"擅长治疗：心力衰竭,高血压,心律失常,先天性心脏病诊断及介入治疗"},
+			{"docImg":"img/shouye/2-6.jpg","docName":"李伟杰","docClass":"主任医师","docDetail":"心血管内科","docGoodAt":"擅长治疗：冠心病"}
+		],
+		[
+			{"docImg":"img/shouye/3-1.jpg","docName":"俞世强","docClass":"教授,主任医师","docDetail":"心血管外科","docGoodAt":"擅长治疗：微创心脏外科、瓣膜外科、大血管疾病外科治疗"},
+			{"docImg":"img/shouye/3-2.jpg","docName":"易定华","docClass":"教授,主任医师","docDetail":"心血管外科","docGoodAt":"擅长治疗：心血管病疾病的外科治疗"},
+			{"docImg":"img/shouye/3-3.jpg","docName":"孙国成","docClass":"教授,主任医师","docDetail":"心血管外科","docGoodAt":"擅长治疗：心血管外科疾病手术治疗,婴幼儿心脏外科治疗、体外循环器官保护"},
+			{"docImg":"img/shouye/3-4.jpg","docName":"陈文生","docClass":"教授,主任医师","docDetail":"心血管外科","docGoodAt":"擅长治疗：心血管外科疾病手术治疗"},
+			{"docImg":"img/shouye/3-5.jpg","docName":"王红兵","docClass":"教授,主任医师","docDetail":"心血管外科","docGoodAt":"擅长治疗：心脏移植和器官保护"},
+			{"docImg":"img/shouye/3-6.jpg","docName":"易蔚","docClass":"副教授,主任医师","docDetail":"心血管外科","docGoodAt":"擅长治疗：微创心脏外科治疗、全腔镜及机器人微创心脏手术治疗先心病及瓣膜病"}
+		],
+		[
+			{"docImg":"img/shouye/4-1.jpg","docName":"孙世仁","docClass":"副教授,副主任医师","docDetail":"肾脏内科","docGoodAt":"擅长治疗：肾小球疾病、肾小管间质疾病"},
+			{"docImg":"img/shouye/4-2.jpg","docName":"许国双","docClass":"副教授,副主任医师","docDetail":"肾脏内科","docGoodAt":"擅长治疗：肾小球肾炎、慢性肾衰竭、腹膜透析、血液透析、CRRT"},
+			{"docImg":"img/shouye/4-3.jpg","docName":"王汉民","docClass":"副教授,副主任医师","docDetail":"肾脏内科","docGoodAt":"擅长治疗：肾脏疾病及血液净化治疗"},
+			{"docImg":"img/shouye/4-4.jpg","docName":"张鹏","docClass":"副教授,副主任医师","docDetail":"肾脏内科","docGoodAt":"擅长治疗：IgA肾病,肾小球疾病、肾小管间质疾病,肾脏病学和血液净化"},
+			{"docImg":"img/shouye/4-5.jpg","docName":"刘宏宝","docClass":"副教授,副主任医师","docDetail":"肾脏内科","docGoodAt":"擅长治疗：肾脏疾病治疗"},
+			{"docImg":"img/shouye/4-6.jpg","docName":"刘晓渭","docClass":"主任医师","docDetail":"肾脏内科","docGoodAt":"擅长治疗：慢性肾脏病治疗"}
+		],
+		[
+			{"docImg":"img/shouye/5-1.jpg","docName":"陈协群","docClass":"主任医师","docDetail":"血液内科","docGoodAt":"擅长治疗：血液病、风湿免疫病及发烧待查的诊治,白血病,淋巴瘤与白血病"},
+			{"docImg":"img/shouye/5-2.jpg","docName":"梁蓉","docClass":"副主任医师","docDetail":"血液内科","docGoodAt":"擅长治疗：淋巴瘤与白血病"}
+		],
+		[
+			{"docImg":"img/shouye/6-1.jpg","docName":"朱平","docClass":"主任医师","docDetail":"临床免疫科","docGoodAt":"擅长治疗：风湿免疫性疾病的诊疗"},
+			{"docImg":"img/shouye/6-2.jpg","docName":"吴振彪","docClass":"主任医师","docDetail":"临床免疫科","docGoodAt":"擅长治疗：风湿免疫性疾病的诊疗"},
+			{"docImg":"img/shouye/6-3.jpg","docName":"冷南","docClass":"副主任医师","docDetail":"临床免疫科","docGoodAt":"擅长治疗：风湿免疫性疾病的诊疗"},
+			{"docImg":"img/shouye/6-4.jpg","docName":"杨西超","docClass":"副主任医师","docDetail":"临床免疫科","docGoodAt":"擅长治疗：风湿免疫性疾病的诊疗"},
+			{"docImg":"img/shouye/6-5.jpg","docName":"赵金康","docClass":"副主任医师","docDetail":"临床免疫科","docGoodAt":"擅长治疗：风湿免疫性疾病的诊疗"},
+			{"docImg":"img/shouye/6-6.jpg","docName":"贾俊峰","docClass":"副主任医师","docDetail":"临床免疫科","docGoodAt":"擅长治疗：风湿免疫性疾病的诊疗"}
+		],
+		[
+			{"docImg":"img/shouye/7-1.jpg","docName":"刘文超","docClass":"主任医师","docDetail":"肿瘤科","docGoodAt":"擅长治疗：常见肿瘤的治疗,肿瘤生物治疗"},
+			{"docImg":"img/shouye/7-2.jpg","docName":"郭军","docClass":"主任医师","docDetail":"肿瘤科","docGoodAt":"擅长治疗：乳腺癌,胃癌,放疗"},
+			{"docImg":"img/shouye/7-3.jpg","docName":"张红梅","docClass":"副主任医师","docDetail":"肿瘤科","docGoodAt":"擅长治疗：恶性肿瘤的诊断、检查,常见肿瘤的治疗,肺癌,卵巢癌"},
+			{"docImg":"img/shouye/7-4.jpg","docName":"薛妍","docClass":"副主任医师","docDetail":"肿瘤科","docGoodAt":"擅长治疗：恶性肿瘤的诊断、检查,肿瘤的精准治疗,乳腺癌,胸腔疾病及胸部外伤诊疗"},
+			{"docImg":"img/shouye/7-5.jpg","docName":"范黎","docClass":"副主任医师","docDetail":"肿瘤科","docGoodAt":"擅长治疗：恶性肿瘤的诊断、检查,化疗,介入治疗"},
+			{"docImg":"img/shouye/7-6.jpg","docName":"喻召才","docClass":"主治医师","docDetail":"肿瘤科","docGoodAt":"擅长治疗：恶性肿瘤的诊断、检查,常见肿瘤的治疗,肝脏肿瘤"}
+		],
+		[
+			{"docImg":"img/shouye/8-1.jpg","docName":"袁建林","docClass":"主任医师","docDetail":"泌尿外科","docGoodAt":"擅长治疗：微创、移植、男科"},
+			{"docImg":"img/shouye/8-2.jpg","docName":"邵晨","docClass":"主任医师","docDetail":"泌尿外科","docGoodAt":"擅长治疗：泌尿生殖系感染,泌尿系肿瘤；微创手术"},
+			{"docImg":"img/shouye/8-3.jpg","docName":"秦卫军","docClass":"主任医师","docDetail":"泌尿外科","docGoodAt":"擅长治疗：泌尿生殖系感染,泌尿系肿瘤；泌尿男科"},
+			{"docImg":"img/shouye/8-4.jpg","docName":"秦荣良","docClass":"主任医师","docDetail":"泌尿外科","docGoodAt":"擅长治疗：泌尿生殖系感染,泌尿生殖系统肿瘤,肾上腺肿瘤 泌尿系肿瘤"},
+			{"docImg":"img/shouye/8-5.jpg","docName":"武国军","docClass":"副主任医师","docDetail":"泌尿外科","docGoodAt":"擅长治疗：泌尿生殖系统肿瘤"},
+			{"docImg":"img/shouye/8-6.jpg","docName":"杨晓剑","docClass":"副主任医师","docDetail":"泌尿外科","docGoodAt":"擅长治疗：泌尿系疾病微创治疗"}
+		]
+]

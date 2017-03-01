@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>图片懒加载实例</title>
+        <meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+        <style>
+            *{
+                margin: 0;
+                padding:0;
+                box-sizing: border-box;
+            }
+            ul li{
+                list-style: none;
+                width: 800px;
+                height: 400px;
+                margin: 6px auto;
+                box-shadow: 0 0 2px 4px #eee;
+            }
+            ul li img{
+                width: 100%;
+                height: 100%;
+            }
+            h3{
+                text-align: center;
+                margin: 10px 0;
+            }
+            @media screen and (max-width:1080px) {
+                ul li{
+                    list-style: none;
+                    width: 100%;
+                    height: 200px;
+                    margin: 2px auto;
+                    box-shadow: 0 0 2px 4px #eee;
+                }
+                ul li img{
+                    width: 100%;
+                    height: 100%;
+                }
+                h3{
+                    text-align: center;
+                    margin: 10px 0;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <h3>图片懒加载实例</h3>
+        <ul class="box">
+            <li><img src="img/default.png" data-src="img/timg.jpg" alt="测试懒加载"></li>
+            <li><img src="img/default.png" data-src="img/timg.jpg" alt="测试懒加载"></li>
+            <li><img src="img/default.png" data-src="img/timg.jpg" alt="测试懒加载"></li>
+            <li><img src="img/default.png" data-src="img/timg.jpg" alt="测试懒加载"></li>
+            <li><img src="img/default.png" data-src="img/timg.jpg" alt="测试懒加载"></li>
+            <li><img src="img/default.png" data-src="img/timg.jpg" alt="测试懒加载"></li>
+            <li><img src="img/default.png" data-src="img/timg.jpg" alt="测试懒加载"></li>
+            <li><img src="img/default.png" data-src="img/timg.jpg" alt="测试懒加载"></li>
+            <li><img src="img/default.png" data-src="img/timg.jpg" alt="测试懒加载"></li>
+            <li><img src="img/default.png" data-src="img/timg.jpg" alt="测试懒加载"></li>
+            <li><img src="img/default.png" data-src="img/timg.jpg" alt="测试懒加载"></li>
+            <li><img src="img/default.png" data-src="img/timg.jpg" alt="测试懒加载"></li>
+            <li><img src="img/default.png" data-src="img/timg.jpg" alt="测试懒加载"></li>
+            <li><img src="img/default.png" data-src="img/timg.jpg" alt="测试懒加载"></li>
+            <li><img src="img/default.png" data-src="img/timg.jpg" alt="测试懒加载"></li>
+            <li><img src="img/default.png" data-src="img/timg.jpg" alt="测试懒加载"></li>
+            <li><img src="img/default.png" data-src="img/timg.jpg" alt="测试懒加载"></li>
+            <li><img src="img/default.png" data-src="img/timg.jpg" alt="测试懒加载"></li>
+            <li><img src="img/default.png" data-src="img/timg.jpg" alt="测试懒加载"></li>
+            <li><img src="img/default.png" data-src="img/timg.jpg" alt="测试懒加载"></li>
+        </ul>
+        <script src="lazyloading-img.js"></script>
+        <script>
+            //使用方法
+            $lazyload({
+                img:'img',//图片即标签名 默认写img
+                default:'img/default.png', //默认src文件名
+                timer:'0.4s'//淡入淡出时间
+            }).init()
+        </script>
+    </body>
+</html>

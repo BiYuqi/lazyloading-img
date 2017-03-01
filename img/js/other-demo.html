@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>原生JS实现分页效果</title>
+<style>
+    body{
+        margin:100px 200px;
+    }
+    #page{
+        margin:20px 0;
+    }
+    #page>#pre,#page>#next{
+        display:inline-block;
+        height: 34px;
+        line-height:34px;
+        padding: 0 18px;
+        border: 1px solid #e1e2e3;
+        text-decoration:none;
+    }
+    .list{
+        display:inline-block;
+    }
+    .list a{
+        text-decoration:none;
+        padding:0 5px;
+    }
+    .list a.current{
+        color:red;
+    }
+    </style>
+</head>
+<body>
+    <section id="box">
+
+    </section>
+    <div id="page">
+        <a href="javascript:;" id="pre">上一页</a>
+        <div class="list"></div>
+        <a href="javascript:;" id="next">下一页</a>
+    </div>
+<script>
+    'use strict'
+    // 获取元素
+    let domBox = document.getElementById("box");
+    let domPage = document.getElementById("page");
+    let domList = document.querySelector(".list");
+    let preNum = 0;
+
+    // 模拟数据
+    let arrJson = [
+        {title:'title_1',content:'Content_1'},
+        {title:'title_2',content:'Content_2'},
+        {title:'title_3',content:'Content_3'},
+        {title:'title_4',content:'Content_4'},
+        {title:'title_5',content:'Content_5'},
+        {title:'title_6',content:'Content_6'},
+        {title:'title_7',content:'Content_7'},
+        {title:'title_8',content:'Content_8'},
+        {title:'title_9',content:'Content_9'},
+        {title:'title_10',content:'Content_10'}
+    ];
+    let jsonLen = arrJson.length;
+    // 设置规则
+    let each = 3;
+    let page = Math.ceil(jsonLen / each);
+
+    // 设置内容
+    for(let i=0;i<each;i++){
+        let domP = '<div>';
+        domP += '<h1>'+ arrJson[i].title +'</h1>';
+        domP += '<p>'+ arrJson[i].content +'</p>';
+        domP += '</div>'
+        domBox.innerHTML += domP;
+    }
+
+
+    // 设置列表页数
+    for(let i=0;i<page;i++){
+        let domA = document.createElement('a');
+        domA.href = 'javascript:;';
+        domA.innerHTML = i + 1;
+        domList.insertBefore(domA,null);
+    }
+    // 获取元素
+    let domListChild = domList.children;
+    // 获取页数
+    let domListLen = domListChild.length;
+
+
+    // 记录上一次单击的元素
+    let preDom = domList.children[0];
+    preDom.className = 'current';
+
+    // 切换页
+    domList.addEventListener('click',function(e){
+    // 获取目标元素
+    let target = e.target;
+    // 获取目标元素的标签名，并统一转换成小写
+    let targetName = target.nodeName.toLocaleLowerCase();
+    if(targetName==='a'){
+    // 添加class
+    preDom.className = '';
+    target.className = 'current';
+    // 改变当前单击的元素。
+    preDom = target;
+    // 改变当前元素索引
+    preNum = target.innerHTML-1;
+
+    // 先清空上个页面的内容
+    domBox.innerHTML = '';
+    // 因为顺序在1，2，3的时候没有规则，所以进行了判断。
+    if(target.innerHTML!=='1'){
+    if(target.innerHTML==='2'){
+    // 遍历每页的条数，并将内容添加到domBox中。
+    for(let i=0;i<each;i++){
+    let arrJsonCurrent = arrJson[i-1+(target.innerHTML*(each-1))];
+    if(arrJsonCurrent==null){break;}
+    let domP = '<div>';
+    domP += '<h1>'+ arrJsonCurrent.title +'</h1>';
+    domP += '<p>'+ arrJsonCurrent.content +'</p>';
+    domP += '</div>';
+    domBox.innerHTML += domP;
+    }
+    }else if(target.innerHTML==='3'){
+    for(let i=0;i<each;i++){
+    let arrJsonCurrent = arrJson[i+(target.innerHTML*(each-1))];
+    if(arrJsonCurrent==null){break;}
+    let domP = '<div>';
+    domP += '<h1>'+ arrJsonCurrent.title +'</h1>';
+    domP += '<p>'+ arrJsonCurrent.content +'</p>';
+    domP += '</div>';
+    domBox.innerHTML += domP;
+    }
+    }else{
+    for(let i=0;i<each;i++){
+    let arrJsonCurrent = arrJson[i + (target.innerHTML-each) +(target.innerHTML*(each-1))];
+    if(arrJsonCurrent==null){break;}
+    let domP = '<div>';
+    domP += '<h1>'+ arrJsonCurrent.title +'</h1>';
+    domP += '<p>'+ arrJsonCurrent.content +'</p>';
+    domP += '</div>';
+    domBox.innerHTML += domP;
+    }
+    }
+    }else{
+    for(let i=0;i<each;i++){
+    let arrJsonCurrent = arrJson[i];
+    if(arrJsonCurrent==null){break;}
+    let domP = '<div>';
+    domP += '<h1>'+ arrJsonCurrent.title +'</h1>';
+    domP += '<p>'+ arrJsonCurrent.content +'</p>';
+    domP += '</div>';
+    domBox.innerHTML += domP;
+    }
+    }
+    }
+    })
+
+    // 获取上一页和下一页元素
+    let pagePreDom = document.getElementById('pre');
+    let pageNextDom = document.getElementById('next');
+
+    // 上一页
+    pagePreDom.addEventListener('click',function(){
+    // 判断当前元素索引
+    if(preNum>0){
+    preNum --;
+    }
+    changeHtml(domBox,preNum,each);
+    })
+
+    // 下一页
+    pageNextDom.addEventListener('click',function(){
+    // 判断当前元素索引
+    if(preNum<domListLen-1){
+    preNum ++;
+    }
+    changeHtml(domBox,preNum,each);
+    })
+
+    // 改变box内容
+    function changeHtml(domBox,currentNum,each){
+    domBox.innerHTML = '';
+    preDom.className = '';
+    domListChild[currentNum].className = 'current';
+    preDom = domListChild[currentNum];
+    switch(currentNum){
+    case 0:
+    // 遍历元素
+    for(let i=0;i<each;i++){
+    let arrJsonCurrent = arrJson[currentNum+i];
+    if(arrJsonCurrent==null){break;}
+    let domP = '<div>';
+    domP += '<h1>'+ arrJsonCurrent.title +'</h1>';
+    domP += '<p>'+ arrJsonCurrent.content +'</p>';
+    domP += '</div>';
+    domBox.innerHTML += domP;
+    }
+    break;
+    case 1:
+    // 遍历元素
+    for(let i=0;i<each;i++){
+    let arrJsonCurrent = arrJson[each+i];
+    if(arrJsonCurrent==null){break;}
+    let domP = '<div>';
+    domP += '<h1>'+ arrJsonCurrent.title +'</h1>';
+    domP += '<p>'+ arrJsonCurrent.content +'</p>';
+    domP += '</div>';
+    domBox.innerHTML += domP;
+    }
+    break;
+    default:
+    // 遍历元素
+    for(let i=0;i<each;i++){
+    let arrJsonCurrent = arrJson[currentNum*each+i];
+    if(arrJsonCurrent==null){break;}
+    let domP = '<div>';
+    domP += '<h1>'+ arrJsonCurrent.title +'</h1>';
+    domP += '<p>'+ arrJsonCurrent.content +'</p>';
+    domP += '</div>';
+    domBox.innerHTML += domP;
+    }
+    break;
+    }
+    }
+
+</script>
+    </body>
+</html>

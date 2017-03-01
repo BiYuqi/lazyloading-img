@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>测试面向对象</title>
+    </head>
+    <body>
+        <script>
+            function add(a,b){
+                add.interTimes++;
+                return a+b;
+            }
+            add.interTimes = 0;
+            add(1,2);
+            add(1,2);
+            console.log(add.interTimes)
+        </script>
+    </body>
+</html>

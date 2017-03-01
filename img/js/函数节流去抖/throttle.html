@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>throttle节流</title>
+        <style>
+            body{
+                height: 8000px;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            //形像的比喻是水龙头或机枪，你可以控制它的流量或频率。
+            //throttle 的关注点是连续的执行间隔时间。
+            //也就是会说预先设定一个执行周期，当调用动作的时刻大于
+            //等于执行周期则执行该动作，然后进入下一个新周期。
+
+            /**
+            * 频率控制 返回函数连续调用时，callback 执行频率限定为 次 / delay
+            * @param delay  {number}    延迟时间，单位毫秒
+            * @param callback {function}  请求关联函数，实际应用需要调用的函数
+            * @return {function}    返回客户调用函数
+            */
+
+            // Debounce：一部电梯停在某一个楼层，当有一个人进来后，
+            //             20秒后自动关门，这20秒的等待期间，又一个人按了电梯进来，
+            //             这20秒又重新计算，直到电梯关门那一刻才算是响应了事件。
+            // Throttle：好比一台自动的饮料机，按拿铁按钮，在出饮料的过程中，不管按多少这个按钮，
+            //             都不会连续出饮料，中间按钮的响应会被忽略，必须要等这一杯的容量全部出完之后，
+            //             再按拿铁按钮才会出下一杯。
+
+            function throttle(delay,callback){
+                var startTime = new Date();
+                return function(){
+                    var currTime = new Date();
+                    if(currTime - startTime >= delay){
+                        callback.apply(this,arguments);
+                        startTime = currTime;
+                    }
+                }
+            }
+            var a = 0;
+            var b = 0;
+            window.addEventListener('resize',throttle(1000,function(){
+                console.log("我真的执行了吗 次/秒")
+            },false));
+            window.addEventListener('scroll',function(){
+                console.log('a'+(a++))
+            },false);
+            window.addEventListener('scroll',throttle(1000,function(){
+                console.log("b"+(b++))
+            },false));
+        </script>
+    </body>
+</html>
