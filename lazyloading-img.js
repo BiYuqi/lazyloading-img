@@ -14,11 +14,25 @@
                 img.show{\
                     animation: fadeIn '+this.obj.timer+' linear;\
                     -webkit-animation: fadeIn '+this.obj.timer+' linear;\
+                    -ms-animation: fadeIn '+this.obj.timer+' linear;\
+                    -moz-animation: fadeIn '+this.obj.timer+' linear;\
                 }\
                 @keyframes fadeIn {\
                     from {opacity: 0;}\
                     to {opacity: 1;}\
-                }'
+                }\
+                @-webkit-keyframes fadeIn {\
+                    from {opacity: 0;}\
+                    to {opacity: 1;}\
+                }\
+                @-moz-keyframes fadeIn {\
+                    from {opacity: 0;}\
+                    to {opacity: 1;}\
+                }\
+                @-ms-keyframes fadeIn {\
+                    from {opacity: 0;}\
+                    to {opacity: 1;}\
+                }';
             var style = document.createElement('style');
                 style.type = 'text/css';
             if(style.styleSheet){
