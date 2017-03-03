@@ -55,10 +55,10 @@
         },
         //节流函数 防止(节约)scroll滚动事件 以固定的的间隔显示图片
         throttle:function(delay,time,callback){
-            var startTime = new Date();
+            var startTime = (new Date()).getTime();
             var timer = null;
             return function(){
-                var currTime = new Date(),
+                var currTime = (new Date()).getTime(),
                     that = this,
                     args = arguments;
                 clearTimeout(timer);
