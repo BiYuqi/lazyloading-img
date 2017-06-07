@@ -90,12 +90,12 @@
         },
         imgScroll:function(){
             var that = this;
-            window.addEventListener('scroll',this.throttle(500,500,function(){
+            window.addEventListener('scroll',this.throttle(400,200,function(){
                 that.lazyload();
             }),false)
         }
     };
     window.$lazyload = function(obj){
-        return new LazyLoaing(obj);
+        return new LazyLoaing(obj).init();
     }
 })(window)
